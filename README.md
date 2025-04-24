@@ -234,6 +234,11 @@ Para usar un broker local, sigue estos pasos:
      const char* mqtt_server = "XX.XX.XX.XX"; // IP de tu PC
      ```
    - Para obtener la IP de tu PC, ejecuta `ipconfig` en **CMD** y usa la **IPv4 Address** del adaptador correspondiente (Wireless LAN adapter Wi-Fi o Ethernet adapter Ethernet).
+7. **Abre MQTT Explorer e introduce los datos de conexión**:
+    - **Host:** `Tu ip`
+    - **Puerto:** `1883`
+    - **Protocolo:** MQTT (TCP), sin TLS
+    - Haz clic en **Connect**.
 
 
 ## 8. Agregar pantalla OLED: explicación
