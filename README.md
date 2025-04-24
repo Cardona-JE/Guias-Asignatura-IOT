@@ -129,7 +129,8 @@ const char* mqtt_server = "test.mosquitto.org";
 const int mqtt_port = 1883;
 const char* topicTemp = "esp32/dht/temperature";
 const char* topicHum = "esp32/dht/humidity";
-// --- Sensor DHT11 --#define DHTPIN 4
+// --- Sensor DHT11 --
+#define DHTPIN 4
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 // --- Clientes ---
@@ -250,13 +251,16 @@ const char* mqtt_server = "test.mosquitto.org";
 const int mqtt_port = 1883;
 const char* topicTemp = "esp32/dht/temperature";
 const char* topicHum = "esp32/dht/humidity";
-// --- DHT11 --#define DHTPIN 4
+// --- DHT11 --
+#define DHTPIN 4
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
-// --- OLED --#define SCREEN_WIDTH 128
+// --- OLED --
+#define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
-// --- Cliente MQTT --WiFiClient espClient;
+// --- Cliente MQTT --
+WiFiClient espClient;
 PubSubClient client(espClient);
 void reconnect() {
     while (!client.connected()) {
