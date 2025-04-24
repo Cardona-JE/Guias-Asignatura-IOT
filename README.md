@@ -124,7 +124,8 @@ void loop() {
 // --- Ajustes WiFi ---
 const char* ssid = "TU_SSID";
 const char* password = "TU_PASSWORD";
-// --- Ajustes MQTT --const char* mqtt_server = "test.mosquitto.org";
+// --- Ajustes MQTT --
+const char* mqtt_server = "test.mosquitto.org";
 const int mqtt_port = 1883;
 const char* topicTemp = "esp32/dht/temperature";
 const char* topicHum = "esp32/dht/humidity";
@@ -244,7 +245,8 @@ Pasos:
 // --- WiFi ---
 const char* ssid = "TU_SSID";
 const char* password = "TU_PASSWORD";
-// --- MQTT --const char* mqtt_server = "test.mosquitto.org";
+// --- MQTT --
+const char* mqtt_server = "test.mosquitto.org";
 const int mqtt_port = 1883;
 const char* topicTemp = "esp32/dht/temperature";
 const char* topicHum = "esp32/dht/humidity";
