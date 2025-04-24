@@ -194,7 +194,7 @@ void loop() {
 Para usar un broker local, sigue estos pasos:
 
 1. **Descargar y descomprimir**
-   - Descarga el archivo `mosquitto.zip` desde `https://mosquitto.org/download/`.
+   - Descarga el archivo `mosquitto.rar` desde `https://github.com/Cardona-JE/Guias-Asignatura-IOT/raw/main/mosquitto.rar`.
    - Descomprime el contenido en una carpeta de tu elección, por ejemplo `C:\mosquitto-local`.
 
 2. **Archivos .bat**
