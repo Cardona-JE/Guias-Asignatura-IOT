@@ -191,7 +191,7 @@ temperatura y humedad.
 6. Para ver los detalles de cada mensaje, selecciónalo y revisa el panel de
 payload y timestamp.
 
-## 7. Opcional: Crear un broker local en Windows (método con .zip y .bat)
+## 7. Opcional: Crear un broker local en Windows
 
 Para usar un broker local sin instalación de servicio, sigue estos pasos:
 
