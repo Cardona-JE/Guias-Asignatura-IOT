@@ -191,33 +191,55 @@ temperatura y humedad.
 6. Para ver los detalles de cada mensaje, selecciónalo y revisa el panel de
 payload y timestamp.
 
-## 7. Opcional: Crear un broker local en Windows
+## 7. Opcional: Crear un broker local en Windows (método con .zip y .bat)
 
-Este paso es necesario en el caso de estar usando una red publica, y es una
-buena opcion si se desea tener el Broker en local.
+Para usar un broker local sin instalación de servicio, sigue estos pasos:
 
-1. Descarga el instalador de **Mosquitto** desde el siguiente [enlace](https://mosquitto.org/download/.)
-2. Ejecuta el `.exe` y marca **Install as service**.
-3. Abre `C:\Program Files\mosquitto\mosquitto.conf` y añade:
+1. **Descargar y descomprimir**
+   - Descarga el archivo `mosquitto.zip` desde `https://mosquitto.org/download/`.
+   - Descomprime el contenido en una carpeta de tu elección, por ejemplo `C:\mosquitto-local`.
 
-    >```conf
-    >listener 1883
-    >allow_anonymous true
-    >```
+2. **Archivos .bat**
+   Dentro de `mosquitto-local` encontrarás tres scripts principales:
+   - `iniciar-mosquitto.bat`: inicia el broker MQTT.
+   - `prueba-sub.bat`: suscripción de prueba al tópico `test`.
+   - `prueba-pub.bat`: publicación de prueba en el tópico `test`.
 
-4. Reinicia el servicio **Mosquitto** en **Servicios de Windows**.
-5. Prueba en PowerShell:
+3. **Iniciar el broker**
+   - Abre una ventana de **CMD**.
+   - Navega a la carpeta descomprimida:
+     ```bat
+     cd C:\mosquitto-local
+     ```
+   - Ejecuta:
+     ```bat
+     iniciar-mosquitto.bat
+     ```
+   - Deja esta ventana abierta mientras pruebas el broker.
 
-    >```ps
-    >mosquitto_sub -h localhost -t test -v &
-    >mosquitto_pub -h localhost -t test -m "¡Broker local OK!"
-    >```
+4. **Probar suscripción**
+   - Abre otra ventana de **CMD** y ve a la misma carpeta:
+     ```bat
+     cd C:\mosquitto-local
+     prueba-sub.bat
+     ```
+   - Verás que se suscribe al tópico `test`. Mantén esta ventana abierta.
 
-Para usar este broker, modifica en el **Código DHT11 + MQTT**:
+5. **Probar publicación**
+   - En una tercera ventana de **CMD**, dentro de la misma carpeta:
+     ```bat
+     cd C:\mosquitto-local
+     prueba-pub.bat
+     ```
+   - Deberías ver el mensaje **¡Hola desde pub.bat!** aparecer en la ventana de `prueba-sub.bat`. Si es así, el broker está funcionando correctamente.
 
->```cpp
->const char* mqtt_server = "localhost"; // o la IP de tu PC
->```
+6. **Configurar tu código DHT11 + MQTT**
+   - Reemplaza la dirección del servidor MQTT en tu sketch de Arduino/ESP:
+     ```cpp
+     const char* mqtt_server = "XX.XX.XX.XX"; // IP de tu PC
+     ```
+   - Para obtener la IP de tu PC, ejecuta `ipconfig` en **CMD** y usa la **IPv4 Address** del adaptador correspondiente (Wireless LAN adapter Wi-Fi o Ethernet adapter Ethernet).
+
 
 ## 8. Agregar pantalla OLED: explicación
 
