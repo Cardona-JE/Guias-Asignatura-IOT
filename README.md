@@ -185,15 +185,13 @@ void loop() {
     - **Protocolo:** MQTT (TCP), sin TLS
     - Haz clic en **Connect**.
 3. En el panel lateral, localiza el botón **+** o **Add new connection** para crear una nueva conexión si no existe.
-4. Una vez conectado, en el árbol de topics, haz clic en **Subscribe to topic** y escribe `esp32/dht/#` para recibir tanto temperatura como humedad.
-5. Observa cómo aparecen nuevos mensajes cada 5s mostrando valores de
-temperatura y humedad.
-6. Para ver los detalles de cada mensaje, selecciónalo y revisa el panel de
-payload y timestamp.
+4. Una vez conectado, en la barra de busqueda ingresa 'esp32/dht' y deberias ver el topic actualizandose cada 5 segundos con los datos de temperatura y humedad.
 
 ## 7. Opcional: Crear un broker local en Windows
+> [!NOTE]  
+> Este paso es opcional y se debe hacer cuando no se puede llegar a una conexion con el broker publico.
 
-Para usar un broker local sin instalación de servicio, sigue estos pasos:
+Para usar un broker local, sigue estos pasos:
 
 1. **Descargar y descomprimir**
    - Descarga el archivo `mosquitto.zip` desde `https://mosquitto.org/download/`.
