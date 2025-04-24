@@ -204,29 +204,26 @@ Para usar un broker local, sigue estos pasos:
    - `prueba-pub.bat`: publicación de prueba en el tópico `test`.
 
 3. **Iniciar el broker**
-   - Abre una ventana de **CMD**.
-   - Navega a la carpeta descomprimida:
+   - Ve a la carpeta descomprimida:
      ```bat
-     cd C:\mosquitto-local
+     \mosquitto-local
      ```
-   - Ejecuta:
+   - Ejecuta este archivo para iniciar el broker:
      ```bat
      iniciar-mosquitto.bat
      ```
    - Deja esta ventana abierta mientras pruebas el broker.
 
 4. **Probar suscripción**
-   - Abre otra ventana de **CMD** y ve a la misma carpeta:
+   - En la misma carpeta, ejecuta el siguiente archivo:
      ```bat
-     cd C:\mosquitto-local
      prueba-sub.bat
      ```
    - Verás que se suscribe al tópico `test`. Mantén esta ventana abierta.
 
 5. **Probar publicación**
-   - En una tercera ventana de **CMD**, dentro de la misma carpeta:
+   - Al final Ejecuta este archivo que se encuentra en la misma carpeta:
      ```bat
-     cd C:\mosquitto-local
      prueba-pub.bat
      ```
    - Deberías ver el mensaje **¡Hola desde pub.bat!** aparecer en la ventana de `prueba-sub.bat`. Si es así, el broker está funcionando correctamente.
