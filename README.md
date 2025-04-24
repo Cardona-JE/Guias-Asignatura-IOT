@@ -179,7 +179,7 @@ void loop() {
 ```
 
 1. Sustituye tus credenciales WiFi.
-2. Abre **MQTT Explorer** e introduce los datos de conexión:
+2. Abre **MQTT Explorer** (Descarga la version portable en: https://mqtt-explorer.com/) e introduce los datos de conexión:
     - **Host:** `test.mosquitto.org`
     - **Puerto:** `1883`
     - **Protocolo:** MQTT (TCP), sin TLS
